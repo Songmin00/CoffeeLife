@@ -32,5 +32,10 @@ namespace CoffeeLife
         {
 
         }
+
+        public void Minigame()
+        {
+
+        }
     }
 }
