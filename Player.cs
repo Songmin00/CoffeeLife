@@ -12,9 +12,9 @@ namespace CoffeeLife
     {
         public static int Money { get; set; }
 
-        public static Drink Menu { get; set; }
+        public static List<IngredientType> Menu { get; set; }
 
-        public static List<Ingredient> Storage { get; set; }
+        //public static List<IngredientType> Storage { get; set; }
 
         public static void MakeDrink()
         {

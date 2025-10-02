@@ -7,35 +7,33 @@ using static CoffeeLife.DrinkFactory;
 
 namespace CoffeeLife
 {
-    public static class Customer
+    public class Customer
     {
-        public static List<Drink> OrderList { get; set; }        
+        public Drink DrinkToOrder { get; set; }
 
-        public static Drink DrinkToOrder { get; set; }
-
-        static Customer()
+        public Customer()
         {
-            OrderList = new List<Drink>();
+            DrinkList = new List<Drink>();
         }
 
-        public static void OrderDrink()
+        public void OrderDrink()
         {
             //주문할 음료를 무작위 생성하기
             Random random = new Random();
-            int a = random.Next(0, OrderList.Count);
-            DrinkToOrder = OrderList[a];
+            int a = random.Next(0, DrinkList.Count);
+            DrinkToOrder = DrinkList[a];
         }
 
-        public static void CheckDrink()
+        public void CheckDrink()
         {
-            if (DrinkToOrder == Player.Menu)
+            if (DrinkToOrder.Recipe == Player.Menu)
             {
                 GiveMoney();
             }
             //주문한 음료와 나온 메뉴를 비교
         }
 
-        public static void GiveMoney()
+        public void GiveMoney()
         {
             Player.Money += DrinkToOrder.Price;
         }
